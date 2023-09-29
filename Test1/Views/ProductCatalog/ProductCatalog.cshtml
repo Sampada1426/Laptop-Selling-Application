@@ -1,0 +1,75 @@
+﻿@using Test1.Models;
+
+@model List<Product>
+
+@{
+    ViewBag.Title = "Product Catalog";
+}
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+    .nameprice {
+        background: #EBD2FF;
+        padding: 10px 20px;
+        margin-bottom: 20px;
+    }
+
+    .card-title {
+        color: #2C2A2B;
+        font-family: Inter;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+    }
+
+    .card-text {
+        color: #2C2A2B;
+        font-family: Inter;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+    }
+
+    .card-desc {
+        color: #2C2A2B;
+        font-family: Inter;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    .btn {
+        border-radius: 60px;
+        background: #4C2AAB;
+        color: #FFF;
+        font-family: Inter;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+    }
+</style>
+
+<div class="container" style="margin-bottom: 40px;">
+    <h2 style="margin: 40px 0;">All Products</h2>
+    <div class="row">
+        @foreach (var product in Model)
+        {
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="@product.ImageURL" class="card-img-top" alt="@product.Name">
+                    <div class="card-body">
+                        <div class="nameprice">
+                            <h5 class="card-title">@product.Name</h5>
+                            <p class="card-text">Rs. @product.Price</p>
+                        </div>
+                        <p class="card-desc">@product.Description</p>
+                        <a href="@Url.Action("ProductDetails", "ProductDetails", new { id = product.ProductId })" class="btn btn-primary">More Details</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

@@ -1,0 +1,52 @@
+﻿@using Test1.Models;
+
+@model Product
+
+@{
+    ViewBag.Title = "Product Details";
+}
+<link rel="stylesheet" type="text/css" href="~/ProductDetails.css" />
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <h2 class="modelname">@Model.Name</h2>
+            <img src="@Model.ImageURL" class="img-fluid" alt="@Model.Name">
+        </div>
+        <div class="col-md-8">
+            <p class="desctitle">Description</p>
+            <p class="desc">@Model.Description</p>
+            <br />
+
+            <div class="productinfo">
+                <div class="detailedinfo">
+                    <p>Brand: <span class="desc">@Model.Brand</span></p>
+                    <p>RAM: <span class="desc">@Model.RAM</span></p>
+                    <p>Storage: <span class="desc">@Model.Storage</span></p>
+                </div>
+                <div class="detailedinfo">
+                    <p>Processor: <span class="desc">@Model.Processor</span></p>
+                    <p>Graphics: <span class="desc">@Model.GraphicsCard</span></p>
+                    <p>Screen Size: <span class="desc">@Model.ScreenSize</span></p>
+                </div>
+            </div><br />
+            
+            <div class="price">
+                <p style="margin-bottom: 0;">Price</p>
+                <p>Rs. @Model.Price/-</p>
+            </div><br />
+
+            <form action="@Url.Action("AddToCart", "ShoppingCart")" method="post">
+                @Html.Hidden("productId", Model.ProductId)
+                <div class="form-group quantity">
+                    <div>
+                        <label for="quantity">Quantity:</label>
+                        <input type="number" id="quantity" name="quantity" class="form-control" value="1" min="1">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Add to Cart</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>

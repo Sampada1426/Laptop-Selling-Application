@@ -1,0 +1,81 @@
+﻿@model Test1.Models.CheckoutViewModel
+
+@{
+    ViewBag.Title = "Checkout";
+}
+
+<style>
+    .column {
+        border-radius: 30px;
+        border: 1px solid #C5C5C5;
+        width: 350px;
+        margin-right: 50px;
+        padding: 30px;
+    }
+
+    .btn {
+        border-radius: 10px;
+        background: #594569;
+        width: 153px;
+        height: auto;
+        color: #FFF;
+        text-align: center;
+        font-family: Inter;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 30px;
+    }
+</style>
+
+<div class="container">
+    <h2 style="margin: 40px 0;">Checkout</h2>
+    @using (Html.BeginForm("Checkout", "Checkout", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+        <div class="row">
+            <div class="col-md-6 column">
+                <h3>Shipping Information</h3><br />
+                @Html.LabelFor(model => model.FullName)
+                @Html.TextBoxFor(model => model.FullName, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.FullName)
+
+                @Html.LabelFor(model => model.Address)
+                @Html.TextBoxFor(model => model.Address, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Address)
+
+                @Html.LabelFor(model => model.City)
+                @Html.TextBoxFor(model => model.City, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.City)<br />
+                
+                @Html.LabelFor(model => model.ShippingMethod)
+                @Html.DropDownListFor(model => model.ShippingMethod, new SelectList(new List<string>
+                {
+                    "Standard",
+                    "Expedited"
+                }), "Select Shipping Method", new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.ShippingMethod)
+            </div>
+            <div class="col-md-6 column">
+                <h3>Payment Information</h3><br />
+                @Html.LabelFor(model => model.CardNumber)
+                @Html.TextBoxFor(model => model.CardNumber, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.CardNumber)
+
+                @Html.LabelFor(model => model.ExpirationMonth)
+                @Html.TextBoxFor(model => model.ExpirationMonth, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.ExpirationMonth)
+
+                @Html.LabelFor(model => model.ExpirationYear)
+                @Html.TextBoxFor(model => model.ExpirationYear, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.ExpirationYear)
+
+                @Html.LabelFor(model => model.CVV)
+                @Html.TextBoxFor(model => model.CVV, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.CVV)
+                <br />
+                <button type="submit" class="btn btn-primary">Place Order</button>
+            </div>
+        </div><br /><br /><br />
+    }
+</div>

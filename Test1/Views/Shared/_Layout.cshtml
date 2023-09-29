@@ -1,0 +1,158 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600&family=Manrope:wght@600&display=swap" rel="stylesheet">
+    <style>
+        .navbar, footer {
+            background: #E8CCFF;
+        }
+
+        .header {
+            border-radius: 20px;
+            border: 0.2px solid #2C2A2B;
+            background: #FFF;
+            width: 1824px;
+            height: 70px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        #navnames {
+            color: #2C2A2B;
+            text-align: center;
+            font-family: Manrope;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+        }
+
+        .logo {
+            width: 100px;
+            height: 40px;
+            margin: 10px 10px 10px 30px;
+        }
+
+        .signin {
+            border-radius: 4px;
+            background: #594569;
+            padding: 0 2px;
+        }
+
+        #registerLink{
+            color: #FFF;
+            text-align: center;
+            font-family: Inter;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 24px;
+        }
+
+        .login {
+            border-radius: 4px;
+            background: #F3F4F6;
+            padding: 0 2px;
+            margin-left: 8px;
+            margin-right: 20px;
+        }
+
+        #loginLink {
+            color: #2C2A2B;
+            text-align: center;
+            font-family: Inter;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 24px;
+        }
+
+        .footer {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+
+        .left {
+            margin: 30px 30px 10px;
+            width: 300px;
+        }
+
+        .footerlogo {
+            margin-bottom: 15px;
+        }
+
+        .address, .support, .marketing {
+            color: #2C2A2B;
+            font-family: Manrope;
+            font-size: 15px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+        }
+
+        .right {
+            margin: 30px 30px 10px;
+        }
+
+        .footertext {
+            color: #2C2A2B;
+            font-family: Manrope;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 30px;
+        }
+    </style>
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm">
+        <div class="container header">
+            <img class="img-fluid logo" src="~/Images/logo.png" alt="logoimg">
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Toggle navigation" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
+                <ul class="navbar-nav flex-grow-1">
+                    <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { id = "navnames", @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Products", "ProductCatalog", "ProductCatalog", new { area = "" }, new { id = "navnames", @class = "nav-link" })</li>
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </nav>
+ 
+        @RenderBody()
+
+        <footer>
+            <div class="footer">
+                <div class="left">
+                    <img class="footerlogo img-fluid" src="~/Images/logo.png" alt="footerlogoimg">
+                    <p class="address">Digital Retailers Inc.,
+                                       123, Tech Park Avenue,
+                                       Cyber City, Bandra East,
+                                       Mumbai, Maharashtra 400051</p>
+                </div>
+                <div class="right">
+                    <p class="footertext">Get in Touch</p>
+                    <p class="support">Support: digitalretailers@gmail.com</p>
+                    <p class="marketing">Marketing: digitalretailersmartketing@gmail.com</p>
+                </div>
+            </div>
+        </footer>
+
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("scripts", required: false)
+</body>
+</html>

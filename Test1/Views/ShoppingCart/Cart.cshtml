@@ -1,0 +1,84 @@
+﻿@using Test1.Models;
+
+@model List<CartItem>
+
+@{
+    ViewBag.Title = "Shopping Cart";
+}
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+    .table {
+        border-radius: 30px;
+        border: 1px solid #C5C5C5;
+    }
+
+    .text-right {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        color: #2C2A2B;
+        font-family: Inter;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 30px;
+    }
+
+    .button {
+        border-radius: 10px;
+        background: #594569;
+        width: 153px;
+        height: auto;
+        color: #FFF;
+        text-align: center;
+        font-family: Inter;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 30px;
+        margin-left: 10px;
+    }
+</style>
+
+<div class="container">
+    <h2 style="margin: 40px 0;">Shopping Cart</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Total</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.ProductName</td>
+                    <td>@item.Quantity</td>
+                    <td>₹@item.Price</td>
+                    <td>₹@(item.Quantity * item.Price)</td>
+                    <td>
+                        @using (Html.BeginForm("UpdateCartItem", "ShoppingCart"))
+                        {
+                            @Html.Hidden("productId", item.ProductId)
+                            <div class="input-group">
+                                @Html.TextBox("quantity", item.Quantity, new { type = "number", min = 1, @class = "form-control" })
+                                <span class="input-group-btn">
+                                    <button type="submit" class="btn btn-primary" style="margin-left: 10px;">Update</button>
+                                </span>
+                            </div><br />
+                        }
+                        <a href="@Url.Action("RemoveCartItem", "ShoppingCart", new { productId = item.ProductId })" class="btn btn-danger">Remove</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table><br />
+    <div class="text-right">
+        <h4>Total: ₹@(Model.Sum(item => item.Quantity * item.Price))</h4>
+        <a href="@Url.Action("Checkout", "Checkout")" class="btn btn-primary button">Checkout</a>
+    </div><br /><br />
+</div>

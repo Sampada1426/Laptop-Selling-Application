@@ -1,0 +1,185 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;600&display=swap');
+
+.section1 {
+    background: #E8CCFF;
+}
+
+.intro {
+    background: black;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding-left: 50px;
+}
+
+.applelogo {
+    width: 113px;
+    height: 113px;
+    margin-bottom: 30px;
+}
+
+.text1 {
+    color: #FFF;
+    font-family: Inter;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 40px;
+}
+
+.text2 {
+    color: #FFF;
+    font-family: Inter;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 30px;
+}
+
+button {
+    width: 100px;
+    height: 40px;
+    border-radius: 100px;
+    border: 3px solid #FFF;
+    color: black;
+    text-align: center;
+    font-family: Inter;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 30px;
+}
+
+.laptopgrp {
+    width: 700px;
+    height: 500px;
+}
+
+.text3 {
+    color: #2C2A2B;
+    text-align: center;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 30px;
+    margin-top: 30px;
+    padding-bottom: 30px;
+}
+
+.span1 {
+    color: #FFF;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 30px;
+}
+
+.span {
+    color: #2C2A2B;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 30px;
+}
+
+.about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.text4 {
+    color: #2C2A2B;
+    font-family: Inter;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 30px;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+.span2 {
+    color: #2C2A2B;
+    font-family: Inter;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 30px;
+}
+
+.cards {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.card1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 30px;
+    background: linear-gradient(100deg, #E8CCFF -11.24%, #FFF 109.34%);
+    box-shadow: 3px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    width: 400px;
+    height: auto;
+    padding: 20px;
+    margin: 30px;
+}
+
+.title {
+    color: #2C2A2B;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 30px;
+}
+
+.description {
+    color: #2C2A2B;
+    font-family: Inter;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.card2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 30px;
+    background: linear-gradient(99deg, #FFF -2.19%, #EBD2FF 101.8%);
+    width: 200px;
+    height: auto;
+    margin: 20px;
+    padding: 10px;
+}
+
+.cardimg {
+    width: 120px;
+    height: 120px;
+}
+
+.text {
+    color: #121212;
+    text-align: center;
+    font-family: Inter;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-top: 10px;
+}

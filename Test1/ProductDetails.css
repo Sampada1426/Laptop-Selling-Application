@@ -1,0 +1,99 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+.row {
+    border-radius: 30px;
+    border: 1px solid #C5C5C5;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    padding: 35px;
+}
+
+.modelname {
+    color: #2C2A2B;
+    font-family: Inter;
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 30px;
+}
+
+.quantity {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: #2C2A2B;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 30px;
+}
+
+#quantity {
+    border-radius: 10px;
+    border: 1px solid #C5C5C5;
+    background: #FFF;
+}
+
+.btn {
+    border-radius: 10px;
+    background: #594569;
+    width: 153px;
+    height: 60px;
+    color: #FFF;
+    text-align: center;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 30px;
+    margin-left: 10px;
+}
+
+.price {
+    border-radius: 10px;
+    background: #E8CCFF;
+    width: 180px;
+    height: 65px;
+    color: #2C2A2B;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    padding: 10px;
+}
+
+.productinfo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.detailedinfo {
+    margin-right: 50px;
+    color: #2C2A2B;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.desctitle {
+    color: #2C2A2B;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.desc {
+    color: #2C2A2B;
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
